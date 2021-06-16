@@ -88,7 +88,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EnvironmentReflections: 1
-    - _FoamThickness: -0.16
+    - _FoamThickness: -0.14
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -102,14 +102,14 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _Surface: 1
-    - _Thickness: 0.1
+    - _Thickness: 0.01
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.2038594, g: 14.983666, b: 19.468573, a: 1}
+    - _Color: {r: 0.15449658, g: 11.355498, b: 14.754423, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.07317906, g: 0.07317906, b: 0.07317906, a: 1}
+    - _FoamColor: {r: 1.5157166, g: 1.5157166, b: 1.5157166, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6279135277171300134
