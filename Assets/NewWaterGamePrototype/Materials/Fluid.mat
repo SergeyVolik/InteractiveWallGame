@@ -88,7 +88,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EnvironmentReflections: 1
-    - _FoamThickness: -0.14
+    - _FoamThickness: -0.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -102,7 +102,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _Surface: 1
-    - _Thickness: 0.01
+    - _Thickness: 1e-12
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:

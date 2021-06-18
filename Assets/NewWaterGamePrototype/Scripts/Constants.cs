@@ -8,8 +8,8 @@ namespace NewWaterfallGame
 {
     public static class Constants
     {
-        public static class Tags {
-            public const string WATER = "Water";
-        }
+        public const int POINTS_FOR_WIN_LEVEL1 = 30;
+        //public const int POINTS_FOR_WIN_LEVEL2 = 30;
+        //public const int POINTS_FOR_WIN_LEVEL3 = 30;
     }
 }

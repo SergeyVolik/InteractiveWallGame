@@ -1,5 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UniRx;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace NewWaterfallGame
 {
     public class KinectAreas : MonoBehaviour
@@ -17,11 +21,30 @@ namespace NewWaterfallGame
             _6
         }
 
-        KinectTarget[] targets;
+        List<KinectTarget> targets = new List<KinectTarget>();
+
+        CompositeDisposable msgHolder;
 
         void Awake()
+        {       
+            targets = FindObjectsOfType<KinectTarget>().ToList();
+        }
+
+        private void OnEnable()
         {
-            targets = GameObject.FindObjectsOfType<KinectTarget>(true);
+            msgHolder = new CompositeDisposable();
+            MessageBroker.Default.Receive<KinectTargetEnabled>().Subscribe(msg => {
+
+                if(!targets.Contains(msg.Value))
+                    targets.Add(msg.Value);
+            }).AddTo(msgHolder);
+            MessageBroker.Default.Receive<KinectTargetDisabled>().Subscribe(msg => {
+                targets.Remove(msg.Value);
+            }).AddTo(msgHolder);
+        }
+        private void OnDisable()
+        {
+            msgHolder.Dispose();
         }
 
         void Update()
@@ -60,7 +83,6 @@ namespace NewWaterfallGame
                     target.Blocked = true;
                     StartCoroutine(ActivateDelay(target));
                 }
-                Debug.Log(target.IsInside(pos));
             }
         }
 
